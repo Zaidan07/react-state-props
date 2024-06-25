@@ -3,19 +3,17 @@ import { useState } from "react";
 import { Button, Wrapper, Box } from "./SwitchButton.styled";
 
 //component
-export default function SwitchButton() {
-  const [handle, setHandle] = useState(false);
+export default function SwitchLamp() {
+  const [lamp, setLamp] = useState(false);
 
   const HandleLamp = () => {
-    setHandle(handle ? false : true);
+    setLamp(lamp ? false : true);
   };
 
   return (
     <Wrapper>
-      <Button onClick={HandleLamp}>
-        <Box bgColor={handle}></Box>
-        {handle ? "On" : "Off"}
-      </Button>
-    </Wrapper>  
+      <Box bgColor={lamp}></Box>
+      <Button onClick={HandleLamp}>{lamp === false ? "Off" : "On"}</Button>
+    </Wrapper>
   );
 }
