@@ -1,19 +1,19 @@
 // import State & Styled Component
 import { useState } from "react";
-import { Box, Button, Wrapper } from "./SwitchButton.styled";
+import { Wrapper, Button, Box } from "./SwitchButton.styled";
 
 //component
-export default function SwitchLamp() {
-  const [onLamp, setOnLamp] = useState(false);
+export default function SwitchButton() {
+  const [button, setButton] = useState(false);
 
-  function handleLamp() {
-    setOnLamp(onLamp ? false : true);
+  function HandleButton() {
+    setButton(button ? false : true);
   }
 
   return (
-    <Wrapper bgWrapper={onLamp}>
-      <Box bgColor={onLamp}></Box>
-      <Button onClick={handleLamp}>{onLamp === false ? "Off" : "On"}</Button>
+    <Wrapper ChangeColor={button}>
+      <Box bgColor={button}></Box>
+      <Button onClick={HandleButton}>{button === false ? "Off" : "On"}</Button>
     </Wrapper>
   );
 }
